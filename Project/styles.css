@@ -1,0 +1,146 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.tabs {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.tab {
+    background-color: #e7e7e7; /* Grey */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.tab:hover {
+    background-color: #ddd; /* Add a grey background on hover */
+}
+.tabs button.active {
+  background-color: black; /* Black background for active tab */
+  color: white; /* White text for active tab */
+}
+.content {
+    padding: 20px;
+    display: none; /* Hide content by default */
+    margin-top: 50px;
+    text-align: center;
+}
+/* Add this to see if it forces visibility when active */
+#data.active {
+  display: block !important;
+}
+
+#home {
+  display: flex; /* Use flexbox to lay out the sidebar and map */
+  height: calc(100vh - 50px); /* Full height minus the tabs height, adjust as needed */
+  align-items: center; /* Center items vertically */
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 20px;  /* Adding some padding for better readability */
+}
+
+.sidebar {
+  width: 30%; /* Sidebar takes up 30% of the width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enables scrolling if content overflows */
+  padding: 20px;
+}
+
+.map-container {
+  width: 70%; /* Map container takes up 70% of the width */
+  height: 100%;
+  display: flex;
+  align-items: center; /* Center the map vertically within the container */
+  justify-content: center; /* Center the map horizontally */
+}
+
+iframe {
+  width: 100%;
+  height: 100%; /* Make the iframe take up all the space in its container */
+  border: none;
+}
+/* Add your existing styles here */
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+  
+  .tabs {
+    margin-top: 20px;
+  }
+  
+  .tab {
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .tab:hover {
+    background-color: #ccc9c9;
+  }
+  
+  .tab button.active, .tab.active {
+    background-color: black;
+    color: white;
+
+  }
+  
+  .content {
+    display: none;
+    padding: 20px;
+    border-top: none;
+  }
+
+  #chartTitle {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  
+  /* Add additional styles as needed */
+  .hidden {
+    display: none;
+ }
+ .tooltip {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 50px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.bar {
+  fill: steelblue;
+}
+.bar:hover {
+  fill: orange;
+}
+.axis-label {
+  font-size: 12px;
+}
