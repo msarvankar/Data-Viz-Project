@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Data Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+
+</head>
+<body>    
+    <div class="tabs">
+        <button class="tab" onclick="showTab('home')" name="home">Home</button>
+        <button class="tab" onclick="showTab('insights')" name="insights">Insights</button>
+        <button class="tab" onclick="showTab('compare')" name="compare">Compare</button>
+    </div>
+    
+    <div id="home" class="content">
+        <div class="sidebar">
+            <h1>Data Expedition 2023: Unveiling Global Country Insights</h1>
+            <p><strong>Subject:</strong><br>CIS 568-7101: Data Visualization - On-Line (2024 Spring CE1)</p>
+            <p><strong>About the project:</strong><br> This platform is designed to provide insights and comparisons of world data through engaging and dynamic visualizations.</p>
+            <p><strong>Dataset Description:</strong><br> A comprehensive set of data representing various global metrics for 2023.</p>
+            <p><a href="features.html" target="_blank">More Info on Features</a></p>
+            <p><strong>Source</strong><br> Kaggle dataset.</p>
+        </div>
+        <div class="map-container" style="width: 70%; float: right;">
+            <iframe src="map.html" width="50%" height="300px" frameborder="0"></iframe>
+        </div>
+    </div>
+
+
+
+    <div id="compare" class="content" style="display:none;">
+        <h1>Global Metrics Explorer</h1>
+        <div id="compare-container">
+            <!-- Dropdowns for selecting features to compare -->
+            <label for="x-axis-dropdown">X-Axis Feature:</label>
+            <!-- <select id="x-axis-dropdown" class="x-axis-dropdown"></select> -->
+            <select id="x-axis-dropdown"></select>
+
+            <label for="y-axis-dropdown">Y-Axis Feature:</label>
+            <!-- <select id="y-axis-dropdown" class="y-axis-dropdown"></select>-->
+            <select id="y-axis-dropdown"></select>
+            <!-- D3.js visualization will be inserted here -->
+            <div id="tooltip" style="position: absolute; display: none; padding: 10px; background: rgba(0, 0, 0, 0.6); color: white; border-radius: 5px; pointer-events: none;"></div>
+
+            <div id="scatterplot">
+            </div>
+        </div>
+    </div>
+    <div id="insights" class="content" style="display:none">
+        <h2 id="chartTitle">Data Insights</h2>
+        <label for="attribute">Choose an attribute:</label>
+        <select id="attribute">
+            <!-- Options will be populated here -->
+        </select>
+    
+        <label for="numCountries">Number of countries:</label>
+        <input type="number" id="numCountries" value="20">
+    
+        <button onclick="updateVisualization()">Update Chart</button>
+    
+        <svg width="960" height="500"></svg>
+    </div>
+    <script src="main.js"></script>
+    <script src="compare.js"></script>
+    <script src="insights.js"></script>
+</body>
+</html>
